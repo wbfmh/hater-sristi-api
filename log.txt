@@ -1,0 +1,766 @@
+ _____  _                    _                  
+/  ___|| |                  (_)                 
+\ `--. | |__    ___   _ __   _  ____  ___  _ __ 
+ `--. \| '_ \  / _ \ | '_ \ | ||_  / / _ \| '__|
+/\__/ /| | | || (_) || |_) || | / / |  __/| |   
+\____/ |_| |_| \___/ | .__/ |_|/___| \___||_|   
+                     | |                        
+                     |_|                        
+Shopizer 3.2.5 [based on Spring Boot version 2.5.12]
+
+2024-09-30 01:09:24.542  INFO 20156 --- [           main] c.s.shop.application.ShopApplication     : Starting ShopApplication v3.2.5 using Java 17.0.3 on LAPTOP-UH2F81T3 with PID 20156 (C:\Users\himag\Documents\GitHub\shopizer\sm-shop\target\shopizer.jar started by himag in C:\Users\himag\Documents\GitHub\shopizer)
+2024-09-30 01:09:24.551  INFO 20156 --- [           main] c.s.shop.application.ShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-09-30 01:09:40.658  INFO 20156 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-30 01:09:40.659  INFO 20156 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-09-30 01:09:43.187  INFO 20156 --- [           main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-09-30 01:09:43.420  INFO 20156 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-30 01:09:47.607  WARN 20156 --- [           main] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-09-30 01:09:47.612  INFO 20156 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-30 01:09:48.646  INFO 20156 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-30 01:09:50.934  WARN 20156 --- [           main] n.s.ehcache.config.ConfigurationFactory  : No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/himag/Documents/GitHub/shopizer/sm-shop/target/shopizer.jar!/BOOT-INF/lib/ehcache-2.10.9.2.jar!/ehcache-failsafe.xml
+Hibernate: drop table if exists CATALOG
+Hibernate: drop table if exists CATALOG_ENTRY
+Hibernate: drop table if exists CATEGORY
+Hibernate: drop table if exists CATEGORY_DESCRIPTION
+Hibernate: drop table if exists CONTENT
+Hibernate: drop table if exists CONTENT_DESCRIPTION
+Hibernate: drop table if exists COUNTRY
+Hibernate: drop table if exists COUNTRY_DESCRIPTION
+Hibernate: drop table if exists CURRENCY
+Hibernate: drop table if exists CUSTOMER
+Hibernate: drop table if exists CUSTOMER_ATTRIBUTE
+Hibernate: drop table if exists CUSTOMER_GROUP
+Hibernate: drop table if exists CUSTOMER_OPT_VAL_DESCRIPTION
+Hibernate: drop table if exists CUSTOMER_OPTIN
+Hibernate: drop table if exists CUSTOMER_OPTION
+Hibernate: drop table if exists CUSTOMER_OPTION_DESC
+Hibernate: drop table if exists CUSTOMER_OPTION_SET
+Hibernate: drop table if exists CUSTOMER_OPTION_VALUE
+Hibernate: drop table if exists CUSTOMER_REVIEW
+Hibernate: drop table if exists CUSTOMER_REVIEW_DESCRIPTION
+Hibernate: drop table if exists FILE_HISTORY
+Hibernate: drop table if exists GEOZONE
+Hibernate: drop table if exists GEOZONE_DESCRIPTION
+Hibernate: drop table if exists LANGUAGE
+Hibernate: drop table if exists MANUFACTURER
+Hibernate: drop table if exists MANUFACTURER_DESCRIPTION
+Hibernate: drop table if exists MERCHANT_CONFIGURATION
+Hibernate: drop table if exists MERCHANT_LANGUAGE
+Hibernate: drop table if exists MERCHANT_LOG
+Hibernate: drop table if exists MERCHANT_STORE
+Hibernate: drop table if exists MODULE_CONFIGURATION
+Hibernate: drop table if exists OPTIN
+Hibernate: drop table if exists ORDER_ACCOUNT
+Hibernate: drop table if exists ORDER_ACCOUNT_PRODUCT
+Hibernate: drop table if exists ORDER_ATTRIBUTE
+Hibernate: drop table if exists ORDER_PRODUCT
+Hibernate: drop table if exists ORDER_PRODUCT_ATTRIBUTE
+Hibernate: drop table if exists ORDER_PRODUCT_DOWNLOAD
+Hibernate: drop table if exists ORDER_PRODUCT_PRICE
+Hibernate: drop table if exists ORDER_STATUS_HISTORY
+Hibernate: drop table if exists ORDER_TOTAL
+Hibernate: drop table if exists ORDERS
+Hibernate: drop table if exists PERMISSION
+Hibernate: drop table if exists PERMISSION_GROUP
+Hibernate: drop table if exists PRODUCT
+Hibernate: drop table if exists PRODUCT_ATTRIBUTE
+Hibernate: drop table if exists PRODUCT_AVAILABILITY
+Hibernate: drop table if exists PRODUCT_CATEGORY
+Hibernate: drop table if exists PRODUCT_DESCRIPTION
+Hibernate: drop table if exists PRODUCT_DIGITAL
+Hibernate: drop table if exists PRODUCT_IMAGE
+Hibernate: drop table if exists PRODUCT_IMAGE_DESCRIPTION
+Hibernate: drop table if exists PRODUCT_OPT_SET_OPT_VALUE
+Hibernate: drop table if exists PRODUCT_OPT_SET_PRD_TYPE
+Hibernate: drop table if exists PRODUCT_OPTION
+Hibernate: drop table if exists PRODUCT_OPTION_DESC
+Hibernate: drop table if exists PRODUCT_OPTION_SET
+Hibernate: drop table if exists PRODUCT_OPTION_VALUE
+Hibernate: drop table if exists PRODUCT_OPTION_VALUE_DESCRIPTION
+Hibernate: drop table if exists PRODUCT_PRICE
+Hibernate: drop table if exists PRODUCT_PRICE_DESCRIPTION
+Hibernate: drop table if exists PRODUCT_RELATIONSHIP
+Hibernate: drop table if exists PRODUCT_REVIEW
+Hibernate: drop table if exists PRODUCT_REVIEW_DESCRIPTION
+Hibernate: drop table if exists PRODUCT_TYPE
+Hibernate: drop table if exists PRODUCT_TYPE_DESCRIPTION
+Hibernate: drop table if exists PRODUCT_VAR_IMAGE
+Hibernate: drop table if exists PRODUCT_VAR_IMAGE_DESCRIPTION
+Hibernate: drop table if exists PRODUCT_VARIANT
+Hibernate: drop table if exists PRODUCT_VARIANT_GROUP
+Hibernate: drop table if exists PRODUCT_VARIATION
+Hibernate: drop table if exists SHIPING_ORIGIN
+Hibernate: drop table if exists SHIPPING_QUOTE
+Hibernate: drop table if exists SHOPPING_CART
+Hibernate: drop table if exists SHOPPING_CART_ATTR_ITEM
+Hibernate: drop table if exists SHOPPING_CART_ITEM
+Hibernate: drop table if exists SM_GROUP
+Hibernate: drop table if exists SM_SEQUENCER
+Hibernate: drop table if exists SM_TRANSACTION
+Hibernate: drop table if exists SYSTEM_CONFIGURATION
+Hibernate: drop table if exists SYSTEM_NOTIFICATION
+Hibernate: drop table if exists TAX_CLASS
+Hibernate: drop table if exists TAX_RATE
+Hibernate: drop table if exists TAX_RATE_DESCRIPTION
+Hibernate: drop table if exists USER_GROUP
+Hibernate: drop table if exists UserConnection
+Hibernate: drop table if exists USERS
+Hibernate: drop table if exists ZONE
+Hibernate: drop table if exists ZONE_DESCRIPTION
+Hibernate: create table CATALOG (id bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), CODE varchar(100) not null, DEFAULT_CATALOG bit, SORT_ORDER integer, VISIBLE bit, MERCHANT_ID integer not null, primary key (id)) type=MyISAM
+Hibernate: create table CATALOG_ENTRY (id bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), VISIBLE bit, CATALOG_ID bigint not null, CATEGORY_ID bigint not null, primary key (id)) type=MyISAM
+Hibernate: create table CATEGORY (CATEGORY_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), CATEGORY_IMAGE varchar(100), CATEGORY_STATUS bit, CODE varchar(100) not null, DEPTH integer, FEATURED bit, LINEAGE varchar(255), SORT_ORDER integer, VISIBLE bit, MERCHANT_ID integer not null, PARENT_ID bigint, primary key (CATEGORY_ID)) type=MyISAM
+Hibernate: create table CATEGORY_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), CATEGORY_HIGHLIGHT varchar(255), META_DESCRIPTION varchar(255), META_KEYWORDS varchar(255), META_TITLE varchar(120), SEF_URL varchar(120), LANGUAGE_ID integer not null, CATEGORY_ID bigint not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table CONTENT (CONTENT_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), CODE varchar(100) not null, CONTENT_POSITION varchar(10), CONTENT_TYPE varchar(10), LINK_TO_MENU bit, PRODUCT_GROUP varchar(255), SORT_ORDER integer, VISIBLE bit, MERCHANT_ID integer not null, primary key (CONTENT_ID)) type=MyISAM
+Hibernate: create table CONTENT_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), META_DESCRIPTION varchar(255), META_KEYWORDS varchar(255), META_TITLE varchar(255), SEF_URL varchar(120), LANGUAGE_ID integer not null, CONTENT_ID bigint not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table COUNTRY (COUNTRY_ID integer not null, COUNTRY_ISOCODE varchar(255) not null, COUNTRY_SUPPORTED bit, GEOZONE_ID bigint, primary key (COUNTRY_ID)) type=MyISAM
+Hibernate: create table COUNTRY_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), LANGUAGE_ID integer not null, COUNTRY_ID integer not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table CURRENCY (CURRENCY_ID bigint not null, CURRENCY_CODE varchar(255), CURRENCY_CURRENCY_CODE varchar(255) not null, CURRENCY_NAME varchar(255), CURRENCY_SUPPORTED bit, primary key (CURRENCY_ID)) type=MyISAM
+Hibernate: create table CUSTOMER (CUSTOMER_ID bigint not null, CUSTOMER_ANONYMOUS bit, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), BILLING_STREET_ADDRESS longtext, BILLING_CITY varchar(100), BILLING_COMPANY varchar(100), BILLING_FIRST_NAME varchar(64) not null, BILLING_LAST_NAME varchar(64) not null, LATITUDE varchar(100), LONGITUDE varchar(100), BILLING_POSTCODE varchar(20), BILLING_STATE varchar(100), BILLING_TELEPHONE varchar(32), CUSTOMER_COMPANY varchar(100), RESET_CREDENTIALS_REQ longtext, RESET_CREDENTIALS_EXP date, REVIEW_AVG decimal(19,2), REVIEW_COUNT integer, CUSTOMER_DOB datetime, DELIVERY_STREET_ADDRESS longtext, DELIVERY_CITY varchar(100), DELIVERY_COMPANY varchar(100), DELIVERY_FIRST_NAME varchar(64), DELIVERY_LAST_NAME varchar(64), DELIVERY_POSTCODE varchar(20), DELIVERY_STATE varchar(100), DELIVERY_TELEPHONE varchar(32), CUSTOMER_EMAIL_ADDRESS varchar(96) not null, CUSTOMER_GENDER varchar(1), CUSTOMER_NICK varchar(96), CUSTOMER_PASSWORD varchar(60), PROVIDER varchar(255), BILLING_COUNTRY_ID integer not null, BILLING_ZONE_ID bigint, LANGUAGE_ID integer not null, DELIVERY_COUNTRY_ID integer, DELIVERY_ZONE_ID bigint, MERCHANT_ID integer not null, primary key (CUSTOMER_ID)) type=MyISAM
+Hibernate: create table CUSTOMER_ATTRIBUTE (CUSTOMER_ATTRIBUTE_ID bigint not null, CUSTOMER_ATTR_TXT_VAL varchar(255), CUSTOMER_ID bigint not null, OPTION_ID bigint not null, OPTION_VALUE_ID bigint not null, primary key (CUSTOMER_ATTRIBUTE_ID)) type=MyISAM
+Hibernate: create table CUSTOMER_GROUP (CUSTOMER_ID bigint not null, GROUP_ID integer not null) type=MyISAM
+Hibernate: create table CUSTOMER_OPT_VAL_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), LANGUAGE_ID integer not null, CUSTOMER_OPT_VAL_ID bigint, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table CUSTOMER_OPTIN (CUSTOMER_OPTIN_ID bigint not null, EMAIL varchar(255) not null, FIRST varchar(255), LAST varchar(255), OPTIN_DATE datetime, VALUE longtext, MERCHANT_ID integer not null, OPTIN_ID bigint, primary key (CUSTOMER_OPTIN_ID)) type=MyISAM
+Hibernate: create table CUSTOMER_OPTION (CUSTOMER_OPTION_ID bigint not null, CUSTOMER_OPT_ACTIVE bit, CUSTOMER_OPT_CODE varchar(255), CUSTOMER_OPTION_TYPE varchar(10), CUSTOMER_OPT_PUBLIC bit, SORT_ORDER integer, MERCHANT_ID integer not null, primary key (CUSTOMER_OPTION_ID)) type=MyISAM
+Hibernate: create table CUSTOMER_OPTION_DESC (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), CUSTOMER_OPTION_COMMENT longtext, LANGUAGE_ID integer not null, CUSTOMER_OPTION_ID bigint not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table CUSTOMER_OPTION_SET (CUSTOMER_OPTIONSET_ID bigint not null, SORT_ORDER integer, CUSTOMER_OPTION_ID bigint not null, CUSTOMER_OPTION_VALUE_ID bigint not null, primary key (CUSTOMER_OPTIONSET_ID)) type=MyISAM
+Hibernate: create table CUSTOMER_OPTION_VALUE (CUSTOMER_OPTION_VALUE_ID bigint not null, CUSTOMER_OPT_VAL_CODE varchar(255), CUSTOMER_OPT_VAL_IMAGE varchar(255), SORT_ORDER integer, MERCHANT_ID integer not null, primary key (CUSTOMER_OPTION_VALUE_ID)) type=MyISAM
+Hibernate: create table CUSTOMER_REVIEW (CUSTOMER_REVIEW_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), REVIEW_DATE datetime, REVIEWS_RATING double precision, REVIEWS_READ bigint, STATUS integer, CUSTOMERS_ID bigint, REVIEWED_CUSTOMER_ID bigint, primary key (CUSTOMER_REVIEW_ID)) type=MyISAM
+Hibernate: create table CUSTOMER_REVIEW_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), LANGUAGE_ID integer not null, CUSTOMER_REVIEW_ID bigint, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table FILE_HISTORY (FILE_HISTORY_ID bigint not null, ACCOUNTED_DATE datetime, DATE_ADDED datetime not null, DATE_DELETED datetime, DOWNLOAD_COUNT integer not null, FILE_ID bigint, FILESIZE integer not null, MERCHANT_ID integer not null, primary key (FILE_HISTORY_ID)) type=MyISAM
+Hibernate: create table GEOZONE (GEOZONE_ID bigint not null, GEOZONE_CODE varchar(255), GEOZONE_NAME varchar(255), primary key (GEOZONE_ID)) type=MyISAM
+Hibernate: create table GEOZONE_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), LANGUAGE_ID integer not null, GEOZONE_ID bigint, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table LANGUAGE (LANGUAGE_ID integer not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), CODE varchar(255) not null, SORT_ORDER integer, primary key (LANGUAGE_ID)) type=MyISAM
+Hibernate: create table MANUFACTURER (MANUFACTURER_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), CODE varchar(100) not null, MANUFACTURER_IMAGE varchar(255), SORT_ORDER integer, MERCHANT_ID integer not null, primary key (MANUFACTURER_ID)) type=MyISAM
+Hibernate: create table MANUFACTURER_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), DATE_LAST_CLICK datetime, MANUFACTURERS_URL varchar(255), URL_CLICKED integer, LANGUAGE_ID integer not null, MANUFACTURER_ID bigint not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table MERCHANT_CONFIGURATION (MERCHANT_CONFIG_ID bigint not null, ACTIVE bit, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), CONFIG_KEY varchar(255), TYPE varchar(255), VALUE longtext, MERCHANT_ID integer, primary key (MERCHANT_CONFIG_ID)) type=MyISAM
+Hibernate: create table MERCHANT_LANGUAGE (stores_MERCHANT_ID integer not null, languages_LANGUAGE_ID integer not null) type=MyISAM
+Hibernate: create table MERCHANT_LOG (MERCHANT_LOG_ID bigint not null, LOG longtext, MODULE varchar(25), MERCHANT_ID integer not null, primary key (MERCHANT_LOG_ID)) type=MyISAM
+Hibernate: create table MERCHANT_STORE (MERCHANT_ID integer not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), STORE_CODE varchar(100) not null, CONTINUESHOPPINGURL varchar(150), CURRENCY_FORMAT_NATIONAL bit, DOMAIN_NAME varchar(80), IN_BUSINESS_SINCE date, INVOICE_TEMPLATE varchar(25), LINEAGE varchar(255), IS_RETAILER bit, SEIZEUNITCODE varchar(5), STORE_EMAIL varchar(60) not null, STORE_LOGO varchar(100), STORE_TEMPLATE varchar(25), STORE_ADDRESS varchar(255), STORE_CITY varchar(100), STORE_NAME varchar(100) not null, STORE_PHONE varchar(50), STORE_POSTAL_CODE varchar(15), STORE_STATE_PROV varchar(100), USE_CACHE bit, WEIGHTUNITCODE varchar(5), COUNTRY_ID integer not null, CURRENCY_ID bigint not null, LANGUAGE_ID integer not null, PARENT_ID integer, ZONE_ID bigint, primary key (MERCHANT_ID)) type=MyISAM
+Hibernate: create table MODULE_CONFIGURATION (MODULE_CONF_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), CODE varchar(255) not null, DETAILS longtext, CONFIGURATION longtext, CUSTOM_IND bit, IMAGE varchar(255), MODULE varchar(255), REGIONS varchar(255), TYPE varchar(255), primary key (MODULE_CONF_ID)) type=MyISAM
+Hibernate: create table OPTIN (OPTIN_ID bigint not null, CODE varchar(255) not null, DESCRIPTION varchar(255), END_DATE datetime, TYPE varchar(255) not null, START_DATE datetime, MERCHANT_ID integer, primary key (OPTIN_ID)) type=MyISAM
+Hibernate: create table ORDER_ACCOUNT (ORDER_ACCOUNT_ID bigint not null, ORDER_ACCOUNT_BILL_DAY integer not null, ORDER_ACCOUNT_END_DATE date, ORDER_ACCOUNT_START_DATE date not null, ORDER_ID bigint not null, primary key (ORDER_ACCOUNT_ID)) type=MyISAM
+Hibernate: create table ORDER_ACCOUNT_PRODUCT (ORDER_ACCOUNT_PRODUCT_ID bigint not null, ORDER_ACCOUNT_PRODUCT_ACCNT_DT date, ORDER_ACCOUNT_PRODUCT_END_DT date, ORDER_ACCOUNT_PRODUCT_EOT datetime, ORDER_ACCOUNT_PRODUCT_L_ST_DT datetime, ORDER_ACCOUNT_PRODUCT_L_TRX_ST integer not null, ORDER_ACCOUNT_PRODUCT_PM_FR_TY integer not null, ORDER_ACCOUNT_PRODUCT_ST_DT date not null, ORDER_ACCOUNT_PRODUCT_STATUS integer not null, ORDER_ACCOUNT_ID bigint not null, ORDER_PRODUCT_ID bigint not null, primary key (ORDER_ACCOUNT_PRODUCT_ID)) type=MyISAM
+Hibernate: create table ORDER_ATTRIBUTE (ORDER_ATTRIBUTE_ID bigint not null, IDENTIFIER varchar(255) not null, VALUE varchar(255) not null, ORDER_ID bigint not null, primary key (ORDER_ATTRIBUTE_ID)) type=MyISAM
+Hibernate: create table ORDER_PRODUCT (ORDER_PRODUCT_ID bigint not null, ONETIME_CHARGE decimal(19,2) not null, PRODUCT_NAME varchar(64) not null, PRODUCT_QUANTITY integer, PRODUCT_SKU varchar(255), ORDER_ID bigint not null, primary key (ORDER_PRODUCT_ID)) type=MyISAM
+Hibernate: create table ORDER_PRODUCT_ATTRIBUTE (ORDER_PRODUCT_ATTRIBUTE_ID bigint not null, PRODUCT_ATTRIBUTE_IS_FREE bit not null, PRODUCT_ATTRIBUTE_NAME varchar(255), PRODUCT_ATTRIBUTE_PRICE decimal(15,4) not null, PRODUCT_ATTRIBUTE_VAL_NAME varchar(255), PRODUCT_ATTRIBUTE_WEIGHT decimal(15,4), PRODUCT_OPTION_ID bigint not null, PRODUCT_OPTION_VALUE_ID bigint not null, ORDER_PRODUCT_ID bigint not null, primary key (ORDER_PRODUCT_ATTRIBUTE_ID)) type=MyISAM
+Hibernate: create table ORDER_PRODUCT_DOWNLOAD (ORDER_PRODUCT_DOWNLOAD_ID bigint not null, DOWNLOAD_COUNT integer not null, DOWNLOAD_MAXDAYS integer not null, ORDER_PRODUCT_FILENAME varchar(255) not null, ORDER_PRODUCT_ID bigint not null, primary key (ORDER_PRODUCT_DOWNLOAD_ID)) type=MyISAM
+Hibernate: create table ORDER_PRODUCT_PRICE (ORDER_PRODUCT_PRICE_ID bigint not null, DEFAULT_PRICE bit not null, PRODUCT_PRICE decimal(19,2) not null, PRODUCT_PRICE_CODE varchar(64) not null, PRODUCT_PRICE_NAME varchar(255), PRODUCT_PRICE_SPECIAL decimal(19,2), PRD_PRICE_SPECIAL_END_DT datetime, PRD_PRICE_SPECIAL_ST_DT datetime, ORDER_PRODUCT_ID bigint not null, primary key (ORDER_PRODUCT_PRICE_ID)) type=MyISAM
+Hibernate: create table ORDER_STATUS_HISTORY (ORDER_STATUS_HISTORY_ID bigint not null, COMMENTS longtext, CUSTOMER_NOTIFIED integer, DATE_ADDED datetime not null, status varchar(255), ORDER_ID bigint not null, primary key (ORDER_STATUS_HISTORY_ID)) type=MyISAM
+Hibernate: create table ORDER_TOTAL (ORDER_ACCOUNT_ID bigint not null, MODULE varchar(60), CODE varchar(255) not null, ORDER_TOTAL_TYPE varchar(255), ORDER_VALUE_TYPE varchar(255), SORT_ORDER integer not null, TEXT longtext, TITLE varchar(255), VALUE decimal(15,4) not null, ORDER_ID bigint not null, primary key (ORDER_ACCOUNT_ID)) type=MyISAM
+Hibernate: create table ORDERS (ORDER_ID bigint not null, BILLING_STREET_ADDRESS longtext, BILLING_CITY varchar(100), BILLING_COMPANY varchar(100), BILLING_FIRST_NAME varchar(64) not null, BILLING_LAST_NAME varchar(64) not null, LATITUDE varchar(100), LONGITUDE varchar(100), BILLING_POSTCODE varchar(20), BILLING_STATE varchar(100), BILLING_TELEPHONE varchar(32), CHANNEL varchar(255), CONFIRMED_ADDRESS bit, CARD_TYPE varchar(255), CC_CVV varchar(255), CC_EXPIRES varchar(255), CC_NUMBER varchar(255), CC_OWNER varchar(255), CURRENCY_VALUE decimal(19,2), CUSTOMER_AGREED bit, CUSTOMER_EMAIL_ADDRESS varchar(50) not null, CUSTOMER_ID bigint, DATE_PURCHASED date, DELIVERY_STREET_ADDRESS longtext, DELIVERY_CITY varchar(100), DELIVERY_COMPANY varchar(100), DELIVERY_FIRST_NAME varchar(64), DELIVERY_LAST_NAME varchar(64), DELIVERY_POSTCODE varchar(20), DELIVERY_STATE varchar(100), DELIVERY_TELEPHONE varchar(32), IP_ADDRESS varchar(255), LAST_MODIFIED datetime, LOCALE varchar(255), ORDER_DATE_FINISHED datetime, ORDER_TYPE varchar(255), PAYMENT_MODULE_CODE varchar(255), PAYMENT_TYPE varchar(255), SHIPPING_MODULE_CODE varchar(255), CART_CODE varchar(255), ORDER_STATUS varchar(255), ORDER_TOTAL decimal(19,2), BILLING_COUNTRY_ID integer not null, BILLING_ZONE_ID bigint, CURRENCY_ID bigint, DELIVERY_COUNTRY_ID integer, DELIVERY_ZONE_ID bigint, MERCHANTID integer, primary key (ORDER_ID)) type=MyISAM
+Hibernate: create table PERMISSION (PERMISSION_ID integer not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), PERMISSION_NAME varchar(255), primary key (PERMISSION_ID)) type=MyISAM
+Hibernate: create table PERMISSION_GROUP (GROUP_ID integer not null, PERMISSION_ID integer not null, primary key (GROUP_ID, PERMISSION_ID)) type=MyISAM
+Hibernate: create table PRODUCT (PRODUCT_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), AVAILABLE bit, COND integer, DATE_AVAILABLE datetime, PREORDER bit, PRODUCT_HEIGHT decimal(19,2), PRODUCT_FREE bit, PRODUCT_LENGTH decimal(19,2), QUANTITY_ORDERED integer, REVIEW_AVG decimal(19,2), REVIEW_COUNT integer, PRODUCT_SHIP bit, PRODUCT_VIRTUAL bit, PRODUCT_WEIGHT decimal(19,2), PRODUCT_WIDTH decimal(19,2), REF_SKU varchar(255), RENTAL_DURATION integer, RENTAL_PERIOD integer, RENTAL_STATUS integer, SKU varchar(255), SORT_ORDER integer, MANUFACTURER_ID bigint, MERCHANT_ID integer not null, CUSTOMER_ID bigint, TAX_CLASS_ID bigint, PRODUCT_TYPE_ID bigint, primary key (PRODUCT_ID)) type=MyISAM
+Hibernate: create table PRODUCT_ATTRIBUTE (PRODUCT_ATTRIBUTE_ID bigint not null, PRODUCT_ATTRIBUTE_DEFAULT bit, PRODUCT_ATTRIBUTE_DISCOUNTED bit, PRODUCT_ATTRIBUTE_FOR_DISP bit, PRODUCT_ATTRIBUTE_REQUIRED bit, PRODUCT_ATTRIBUTE_FREE bit, PRODUCT_ATRIBUTE_PRICE decimal(19,2), PRODUCT_ATTRIBUTE_WEIGHT decimal(19,2), PRODUCT_ATTRIBUTE_SORT_ORD integer, PRODUCT_ID bigint not null, OPTION_ID bigint not null, OPTION_VALUE_ID bigint not null, primary key (PRODUCT_ATTRIBUTE_ID)) type=MyISAM
+Hibernate: create table PRODUCT_AVAILABILITY (PRODUCT_AVAIL_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), AVAILABLE bit, HEIGHT decimal(19,2), LENGTH decimal(19,2), WEIGHT decimal(19,2), WIDTH decimal(19,2), OWNER varchar(255), DATE_AVAILABLE date, FREE_SHIPPING bit, QUANTITY integer, QUANTITY_ORD_MAX integer, QUANTITY_ORD_MIN integer, STATUS bit, REGION varchar(255), REGION_VARIANT varchar(255), SKU varchar(255), MERCHANT_ID integer, PRODUCT_ID bigint not null, PRODUCT_VARIANT bigint, primary key (PRODUCT_AVAIL_ID)) type=MyISAM
+Hibernate: create table PRODUCT_CATEGORY (PRODUCT_ID bigint not null, CATEGORY_ID bigint not null, primary key (PRODUCT_ID, CATEGORY_ID)) type=MyISAM
+Hibernate: create table PRODUCT_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), META_DESCRIPTION varchar(255), META_KEYWORDS varchar(255), META_TITLE varchar(255), DOWNLOAD_LNK varchar(255), PRODUCT_HIGHLIGHT varchar(255), SEF_URL varchar(255), LANGUAGE_ID integer not null, PRODUCT_ID bigint not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table PRODUCT_DIGITAL (PRODUCT_DIGITAL_ID bigint not null, FILE_NAME varchar(255) not null, PRODUCT_ID bigint not null, primary key (PRODUCT_DIGITAL_ID)) type=MyISAM
+Hibernate: create table PRODUCT_IMAGE (PRODUCT_IMAGE_ID bigint not null, DEFAULT_IMAGE bit, IMAGE_CROP bit, IMAGE_TYPE integer, PRODUCT_IMAGE varchar(255), PRODUCT_IMAGE_URL varchar(255), SORT_ORDER integer, PRODUCT_ID bigint not null, primary key (PRODUCT_IMAGE_ID)) type=MyISAM
+Hibernate: create table PRODUCT_IMAGE_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), ALT_TAG varchar(100), LANGUAGE_ID integer not null, PRODUCT_IMAGE_ID bigint not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table PRODUCT_OPT_SET_OPT_VALUE (ProductOptionSet_PRODUCT_OPTION_SET_ID bigint not null, values_PRODUCT_OPTION_VALUE_ID bigint not null) type=MyISAM
+Hibernate: create table PRODUCT_OPT_SET_PRD_TYPE (ProductOptionSet_PRODUCT_OPTION_SET_ID bigint not null, productTypes_PRODUCT_TYPE_ID bigint not null, primary key (ProductOptionSet_PRODUCT_OPTION_SET_ID, productTypes_PRODUCT_TYPE_ID)) type=MyISAM
+Hibernate: create table PRODUCT_OPTION (PRODUCT_OPTION_ID bigint not null, PRODUCT_OPTION_CODE varchar(255), PRODUCT_OPTION_SORT_ORD integer, PRODUCT_OPTION_TYPE varchar(10), PRODUCT_OPTION_READ bit, MERCHANT_ID integer not null, primary key (PRODUCT_OPTION_ID)) type=MyISAM
+Hibernate: create table PRODUCT_OPTION_DESC (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), PRODUCT_OPTION_COMMENT longtext, LANGUAGE_ID integer not null, PRODUCT_OPTION_ID bigint not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table PRODUCT_OPTION_SET (PRODUCT_OPTION_SET_ID bigint not null, PRODUCT_OPTION_SET_CODE varchar(255), PRODUCT_OPTION_SET_DISP bit, PRODUCT_OPTION_ID bigint not null, MERCHANT_ID integer not null, primary key (PRODUCT_OPTION_SET_ID)) type=MyISAM
+Hibernate: create table PRODUCT_OPTION_VALUE (PRODUCT_OPTION_VALUE_ID bigint not null, PRODUCT_OPTION_VAL_CODE varchar(255), PRODUCT_OPT_FOR_DISP bit, PRODUCT_OPT_VAL_IMAGE varchar(255), PRODUCT_OPT_VAL_SORT_ORD integer, MERCHANT_ID integer not null, primary key (PRODUCT_OPTION_VALUE_ID)) type=MyISAM
+Hibernate: create table PRODUCT_OPTION_VALUE_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), LANGUAGE_ID integer not null, PRODUCT_OPTION_VALUE_ID bigint, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table PRODUCT_PRICE (PRODUCT_PRICE_ID bigint not null, PRODUCT_PRICE_CODE varchar(255) not null, DEFAULT_PRICE bit, PRODUCT_IDENTIFIER_ID bigint, PRODUCT_PRICE_AMOUNT decimal(19,2), PRODUCT_PRICE_SPECIAL_AMOUNT decimal(19,2), PRODUCT_PRICE_SPECIAL_END_DATE date, PRODUCT_PRICE_SPECIAL_ST_DATE date, PRODUCT_PRICE_TYPE varchar(20), PRODUCT_AVAIL_ID bigint not null, primary key (PRODUCT_PRICE_ID)) type=MyISAM
+Hibernate: create table PRODUCT_PRICE_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), PRICE_APPENDER varchar(255), LANGUAGE_ID integer not null, PRODUCT_PRICE_ID bigint not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table PRODUCT_RELATIONSHIP (PRODUCT_RELATIONSHIP_ID bigint not null, ACTIVE bit, CODE varchar(255), PRODUCT_ID bigint, RELATED_PRODUCT_ID bigint, MERCHANT_ID integer not null, primary key (PRODUCT_RELATIONSHIP_ID)) type=MyISAM
+Hibernate: create table PRODUCT_REVIEW (PRODUCT_REVIEW_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), REVIEW_DATE datetime, REVIEWS_RATING double precision, REVIEWS_READ bigint, STATUS integer, CUSTOMERS_ID bigint, PRODUCT_ID bigint, primary key (PRODUCT_REVIEW_ID)) type=MyISAM
+Hibernate: create table PRODUCT_REVIEW_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), LANGUAGE_ID integer not null, PRODUCT_REVIEW_ID bigint, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table PRODUCT_TYPE (PRODUCT_TYPE_ID bigint not null, PRD_TYPE_ADD_TO_CART bit, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), PRD_TYPE_CODE varchar(255), PRD_TYPE_VISIBLE bit, MERCHANT_ID integer, primary key (PRODUCT_TYPE_ID)) type=MyISAM
+Hibernate: create table PRODUCT_TYPE_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), LANGUAGE_ID integer not null, PRODUCT_TYPE_ID bigint not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table PRODUCT_VAR_IMAGE (PRODUCT_VAR_IMAGE_ID bigint not null, DEFAULT_IMAGE bit, PRODUCT_IMAGE varchar(255), PRODUCT_VARIANT_GROUP_ID bigint not null, primary key (PRODUCT_VAR_IMAGE_ID)) type=MyISAM
+Hibernate: create table PRODUCT_VAR_IMAGE_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), ALT_TAG varchar(100), LANGUAGE_ID integer not null, PRODUCT_ID bigint not null, PRODUCT_VAR_IMAGE_ID bigint not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table PRODUCT_VARIANT (PRODUCT_VARIANT_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), AVAILABLE bit, CODE varchar(255), DATE_AVAILABLE datetime, DEFAULT_SELECTION bit, SKU varchar(255), SORT_ORDER integer, PRODUCT_ID bigint not null, PRODUCT_VARIANT_GROUP_ID bigint, PRODUCT_VARIATION_ID bigint, PRODUCT_VARIATION_VALUE_ID bigint, primary key (PRODUCT_VARIANT_ID)) type=MyISAM
+Hibernate: create table PRODUCT_VARIANT_GROUP (PRODUCT_VARIANT_GROUP_ID bigint not null, MERCHANT_ID integer not null, primary key (PRODUCT_VARIANT_GROUP_ID)) type=MyISAM
+Hibernate: create table PRODUCT_VARIATION (PRODUCT_VARIATION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), CODE varchar(100) not null, SORT_ORDER integer, VARIANT_DEFAULT bit, MERCHANT_ID integer not null, PRODUCT_OPTION_ID bigint not null, OPTION_VALUE_ID bigint not null, primary key (PRODUCT_VARIATION_ID)) type=MyISAM
+Hibernate: create table SHIPING_ORIGIN (SHIP_ORIGIN_ID bigint not null, ACTIVE bit, STREET_ADDRESS longtext, CITY varchar(100), POSTCODE varchar(20), STATE varchar(100), COUNTRY_ID integer, MERCHANT_ID integer not null, ZONE_ID bigint, primary key (SHIP_ORIGIN_ID)) type=MyISAM
+Hibernate: create table SHIPPING_QUOTE (SHIPPING_QUOTE_ID bigint not null, CART_ID bigint, CUSTOMER_ID bigint, DELIVERY_STREET_ADDRESS longtext, DELIVERY_CITY varchar(100), DELIVERY_COMPANY varchar(100), DELIVERY_FIRST_NAME varchar(64), DELIVERY_LAST_NAME varchar(64), DELIVERY_POSTCODE varchar(20), DELIVERY_STATE varchar(100), DELIVERY_TELEPHONE varchar(32), SHIPPING_NUMBER_DAYS integer, FREE_SHIPPING bit, QUOTE_HANDLING decimal(19,2), IP_ADDRESS varchar(255), MODULE varchar(255) not null, OPTION_CODE varchar(255), OPTION_DELIVERY_DATE datetime, OPTION_NAME varchar(255), OPTION_SHIPPING_DATE datetime, ORDER_ID bigint, QUOTE_PRICE decimal(19,2), QUOTE_DATE datetime, DELIVERY_COUNTRY_ID integer, DELIVERY_ZONE_ID bigint, primary key (SHIPPING_QUOTE_ID)) type=MyISAM
+Hibernate: create table SHOPPING_CART (SHP_CART_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), CUSTOMER_ID bigint, IP_ADDRESS varchar(255), ORDER_ID bigint, PROMO_ADDED datetime, PROMO_CODE varchar(255), SHP_CART_CODE varchar(255) not null, MERCHANT_ID integer not null, primary key (SHP_CART_ID)) type=MyISAM
+Hibernate: create table SHOPPING_CART_ATTR_ITEM (SHP_CART_ATTR_ITEM_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), PRODUCT_ATTR_ID bigint not null, SHP_CART_ITEM_ID bigint not null, primary key (SHP_CART_ATTR_ITEM_ID)) type=MyISAM
+Hibernate: create table SHOPPING_CART_ITEM (SHP_CART_ITEM_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), PRODUCT_ID bigint not null, QUANTITY integer, SKU varchar(255), PRODUCT_VARIANT bigint, SHP_CART_ID bigint not null, primary key (SHP_CART_ITEM_ID)) type=MyISAM
+Hibernate: create table SM_GROUP (GROUP_ID integer not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), GROUP_NAME varchar(255), GROUP_TYPE varchar(255), primary key (GROUP_ID)) type=MyISAM
+Hibernate: create table SM_SEQUENCER (SEQ_NAME varchar(255) not null, SEQ_COUNT bigint, primary key (SEQ_NAME)) type=MyISAM
+Hibernate: create table SM_TRANSACTION (TRANSACTION_ID bigint not null, AMOUNT decimal(19,2), DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DETAILS longtext, PAYMENT_TYPE varchar(255), TRANSACTION_DATE datetime, TRANSACTION_TYPE varchar(255), ORDER_ID bigint, primary key (TRANSACTION_ID)) type=MyISAM
+Hibernate: create table SYSTEM_CONFIGURATION (SYSTEM_CONFIG_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), CONFIG_KEY varchar(255), VALUE varchar(255), primary key (SYSTEM_CONFIG_ID)) type=MyISAM
+Hibernate: create table SYSTEM_NOTIFICATION (SYSTEM_NOTIF_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), END_DATE date, CONFIG_KEY varchar(255), START_DATE date, VALUE varchar(255), MERCHANT_ID integer, USER_ID bigint, primary key (SYSTEM_NOTIF_ID)) type=MyISAM
+Hibernate: create table TAX_CLASS (TAX_CLASS_ID bigint not null, TAX_CLASS_CODE varchar(10) not null, TAX_CLASS_TITLE varchar(32) not null, MERCHANT_ID integer, primary key (TAX_CLASS_ID)) type=MyISAM
+Hibernate: create table TAX_RATE (TAX_RATE_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), TAX_CODE varchar(255), PIGGYBACK bit, STORE_STATE_PROV varchar(100), TAX_PRIORITY integer, TAX_RATE decimal(7,4) not null, COUNTRY_ID integer not null, MERCHANT_ID integer not null, PARENT_ID bigint, TAX_CLASS_ID bigint not null, ZONE_ID bigint, primary key (TAX_RATE_ID)) type=MyISAM
+Hibernate: create table TAX_RATE_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), LANGUAGE_ID integer not null, TAX_RATE_ID bigint, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: create table USER_GROUP (USER_ID bigint not null, GROUP_ID integer not null) type=MyISAM
+Hibernate: create table UserConnection (providerId varchar(255) not null, providerUserId varchar(255) not null, userId varchar(255) not null, accessToken varchar(255), displayName varchar(255), expireTime bigint, imageUrl varchar(255), profileUrl varchar(255), refreshToken varchar(255), secret varchar(255), userRank integer not null, primary key (providerId, providerUserId, userId)) type=MyISAM
+Hibernate: create table USERS (USER_ID bigint not null, ACTIVE bit, ADMIN_EMAIL varchar(255), ADMIN_NAME varchar(100), ADMIN_PASSWORD varchar(60), ADMIN_A1 varchar(255), ADMIN_A2 varchar(255), ADMIN_A3 varchar(255), DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), RESET_CREDENTIALS_REQ longtext, RESET_CREDENTIALS_EXP date, ADMIN_FIRST_NAME varchar(255), LAST_ACCESS datetime, ADMIN_LAST_NAME varchar(255), LOGIN_ACCESS datetime, ADMIN_Q1 varchar(255), ADMIN_Q2 varchar(255), ADMIN_Q3 varchar(255), LANGUAGE_ID integer, MERCHANT_ID integer not null, primary key (USER_ID)) type=MyISAM
+Hibernate: create table ZONE (ZONE_ID bigint not null, ZONE_CODE varchar(255) not null, COUNTRY_ID integer not null, primary key (ZONE_ID)) type=MyISAM
+Hibernate: create table ZONE_DESCRIPTION (DESCRIPTION_ID bigint not null, DATE_CREATED datetime, DATE_MODIFIED datetime, UPDT_ID varchar(60), DESCRIPTION longtext, NAME varchar(120) not null, TITLE varchar(100), LANGUAGE_ID integer not null, ZONE_ID bigint not null, primary key (DESCRIPTION_ID)) type=MyISAM
+Hibernate: alter table CATALOG add constraint UK32mubpubtaqu30n34bwl7xiis unique (MERCHANT_ID, CODE)
+Hibernate: alter table CATALOG_ENTRY add constraint UK5q8159i414r299kia2w9re90k unique (CATEGORY_ID, CATALOG_ID)
+Hibernate: create index IDXlctdd0gcnad49kass3ntxv54n on CATEGORY (LINEAGE)
+Hibernate: alter table CATEGORY add constraint UK3mq9i6qmgquvoieslx39pej6x unique (MERCHANT_ID, CODE)
+Hibernate: alter table CATEGORY_DESCRIPTION add constraint UKbuesqq6cyx7e5hy3mf30cfieq unique (CATEGORY_ID, LANGUAGE_ID)
+Hibernate: create index CODE_IDX on CONTENT (CODE)
+Hibernate: alter table CONTENT add constraint UKt1v2ld0mrwviquqourql4uub0 unique (MERCHANT_ID, CODE)
+Hibernate: alter table CONTENT_DESCRIPTION add constraint UKn0w5r7ctbp88r4rvk7ayklofm unique (CONTENT_ID, LANGUAGE_ID)
+Hibernate: alter table COUNTRY add constraint UK_dqb99v22pt27v0tgeqo958e6x unique (COUNTRY_ISOCODE)
+Hibernate: alter table COUNTRY_DESCRIPTION add constraint UKt7nshki1rbp6157ed0v6cx4y4 unique (COUNTRY_ID, LANGUAGE_ID)
+Hibernate: alter table CURRENCY add constraint UK_1ubr7n96hjajamtggqp090a4x unique (CURRENCY_CODE)
+Hibernate: alter table CURRENCY add constraint UK_m7ku15ekud52vp67ry73a36te unique (CURRENCY_CURRENCY_CODE)
+Hibernate: alter table CURRENCY add constraint UK_7r1k69cbk5giewqr5c9r4v6f unique (CURRENCY_NAME)
+Hibernate: alter table CUSTOMER add constraint UK6v48av32rli7qu9m3ksb32art unique (MERCHANT_ID, CUSTOMER_NICK)
+Hibernate: alter table CUSTOMER_ATTRIBUTE add constraint UK46kbpre88yh963gewm3kmdni1 unique (OPTION_ID, CUSTOMER_ID)
+Hibernate: alter table CUSTOMER_OPT_VAL_DESCRIPTION add constraint UKge7f2t1d31r87wnk09h9u1tnv unique (CUSTOMER_OPT_VAL_ID, LANGUAGE_ID)
+Hibernate: alter table CUSTOMER_OPTIN add constraint UKc4fnyu0pvxxtrbko10rm1jqyw unique (EMAIL, OPTIN_ID)
+Hibernate: create index CUST_OPT_CODE_IDX on CUSTOMER_OPTION (CUSTOMER_OPT_CODE)
+Hibernate: alter table CUSTOMER_OPTION add constraint UKrov34a6g4dhhiqukvhp1ggm0u unique (MERCHANT_ID, CUSTOMER_OPT_CODE)
+Hibernate: alter table CUSTOMER_OPTION_DESC add constraint UK6ovl4t1ciag1wubtcebaoo7vi unique (CUSTOMER_OPTION_ID, LANGUAGE_ID)
+Hibernate: alter table CUSTOMER_OPTION_SET add constraint UK4peli2ritnnq2xqpyq188srm6 unique (CUSTOMER_OPTION_ID, CUSTOMER_OPTION_VALUE_ID)
+Hibernate: create index CUST_OPT_VAL_CODE_IDX on CUSTOMER_OPTION_VALUE (CUSTOMER_OPT_VAL_CODE)
+Hibernate: alter table CUSTOMER_OPTION_VALUE add constraint UKcb1fmv71nrx7m1rlx1ff5qvdt unique (MERCHANT_ID, CUSTOMER_OPT_VAL_CODE)
+Hibernate: alter table CUSTOMER_REVIEW add constraint UK2momthbfrtgico2yyod8w18pk unique (CUSTOMERS_ID, REVIEWED_CUSTOMER_ID)
+Hibernate: alter table CUSTOMER_REVIEW_DESCRIPTION add constraint UK1va9q0nhoe3wli25ktpmouvyh unique (CUSTOMER_REVIEW_ID, LANGUAGE_ID)
+Hibernate: alter table FILE_HISTORY add constraint UKav35sb3v4nxq8v1n1rkxufir unique (MERCHANT_ID, FILE_ID)
+Hibernate: alter table GEOZONE_DESCRIPTION add constraint UKsoq8o99w3c8ys3ntamt5i4mat unique (GEOZONE_ID, LANGUAGE_ID)
+Hibernate: create index CODE_IDX2 on LANGUAGE (CODE)
+Hibernate: alter table MANUFACTURER add constraint UK6brqfdkga7jc78n8dh3v595y3 unique (MERCHANT_ID, CODE)
+Hibernate: alter table MANUFACTURER_DESCRIPTION add constraint UKlpv09p83sc887clxe04nroup6 unique (MANUFACTURER_ID, LANGUAGE_ID)
+Hibernate: alter table MERCHANT_CONFIGURATION add constraint UKj0c3h8onw3m6hjcr3yylst9fb unique (MERCHANT_ID, CONFIG_KEY)
+Hibernate: create index IDXrkmg1f192v53wcxln88wrwgrx on MERCHANT_STORE (LINEAGE)
+Hibernate: alter table MERCHANT_STORE add constraint UK_4pvtsnqv4nlao8725n9ldpguf unique (STORE_CODE)
+Hibernate: create index MODULE_CONFIGURATION_MODULE on MODULE_CONFIGURATION (MODULE)
+Hibernate: alter table OPTIN add constraint UKmanlx6siq6ddf14cud40k8gw6 unique (MERCHANT_ID, CODE)
+Hibernate: alter table PERMISSION add constraint UK_ss26hgwetkj8ms5y5jn2co4j3 unique (PERMISSION_NAME)
+Hibernate: alter table PRODUCT add constraint UKs8ofsn9pehdrstjg52j5qabxh unique (MERCHANT_ID, SKU)
+Hibernate: create index IDX6h8m6ocg2jhu3bfieqa0dupb1 on PRODUCT_ATTRIBUTE (PRODUCT_ID)
+Hibernate: alter table PRODUCT_ATTRIBUTE add constraint UKo0c6cfxcfejwfa2877gfgpuco unique (OPTION_ID, OPTION_VALUE_ID, PRODUCT_ID)
+Hibernate: create index PRD_AVAIL_STORE_PRD_IDX on PRODUCT_AVAILABILITY (PRODUCT_ID, MERCHANT_ID)
+Hibernate: create index PRD_AVAIL_PRD_IDX on PRODUCT_AVAILABILITY (PRODUCT_ID)
+Hibernate: alter table PRODUCT_AVAILABILITY add constraint UK75h2ri3r4y4b5n6q8v4dmjgbk unique (MERCHANT_ID, PRODUCT_ID, PRODUCT_VARIANT, REGION_VARIANT)
+Hibernate: create index PRODUCT_DESCRIPTION_SEF_URL on PRODUCT_DESCRIPTION (SEF_URL)
+Hibernate: alter table PRODUCT_DESCRIPTION add constraint UKq4dnkx5b776ayqas2h4rr2d8q unique (PRODUCT_ID, LANGUAGE_ID)
+Hibernate: alter table PRODUCT_DIGITAL add constraint UKjuk1qgkh9v5w7ghvb18krwo8v unique (PRODUCT_ID, FILE_NAME)
+Hibernate: alter table PRODUCT_IMAGE_DESCRIPTION add constraint UKn7yhdj6ccydgf201gibb882cd unique (PRODUCT_IMAGE_ID, LANGUAGE_ID)
+Hibernate: create index PRD_OPTION_CODE_IDX on PRODUCT_OPTION (PRODUCT_OPTION_CODE)
+Hibernate: alter table PRODUCT_OPTION add constraint UKhfcw5oi9ulljlog1b7ns1r9tu unique (MERCHANT_ID, PRODUCT_OPTION_CODE)
+Hibernate: alter table PRODUCT_OPTION_DESC add constraint UKmkcm8isyyyqbjd1yyb8mrpkuw unique (PRODUCT_OPTION_ID, LANGUAGE_ID)
+Hibernate: alter table PRODUCT_OPTION_SET add constraint UKk1qq8j685uj17bylgnkra1n5f unique (MERCHANT_ID, PRODUCT_OPTION_SET_CODE)
+Hibernate: create index PRD_OPTION_VAL_CODE_IDX on PRODUCT_OPTION_VALUE (PRODUCT_OPTION_VAL_CODE)
+Hibernate: alter table PRODUCT_OPTION_VALUE add constraint UKixbpi4hxrhljh935c3xfvnvsh unique (MERCHANT_ID, PRODUCT_OPTION_VAL_CODE)
+Hibernate: alter table PRODUCT_OPTION_VALUE_DESCRIPTION add constraint UKasgc60ot1wy0uho96n0j8429p unique (PRODUCT_OPTION_VALUE_ID, LANGUAGE_ID)
+Hibernate: alter table PRODUCT_PRICE_DESCRIPTION add constraint UKfrsw8d41sxxogvxxoyd8nwaxu unique (PRODUCT_PRICE_ID, LANGUAGE_ID)
+Hibernate: alter table PRODUCT_REVIEW add constraint UK9ew5idgdbk8a77534hbnhd4yb unique (CUSTOMERS_ID, PRODUCT_ID)
+Hibernate: alter table PRODUCT_REVIEW_DESCRIPTION add constraint UKqno5wjdtcj8pm3ykkkh7t4rxj unique (PRODUCT_REVIEW_ID, LANGUAGE_ID)
+Hibernate: alter table PRODUCT_TYPE_DESCRIPTION add constraint UKbnra4lwqjkju4yh04824sw6be unique (PRODUCT_TYPE_ID, LANGUAGE_ID)
+Hibernate: alter table PRODUCT_VAR_IMAGE_DESCRIPTION add constraint UKimi0kpikvll5gf63n36x3yrwt unique (PRODUCT_VAR_IMAGE_ID, LANGUAGE_ID)
+Hibernate: create index IDX9ngqm1gg8oivkujmhee4wt0ox on PRODUCT_VARIANT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_VARIANT add constraint UKlhuo20v01wa867oa7bjqagv72 unique (PRODUCT_ID, SKU)
+Hibernate: alter table PRODUCT_VARIATION add constraint UKi8sa74fv4io0sigmgvqxypp0d unique (MERCHANT_ID, PRODUCT_OPTION_ID, OPTION_VALUE_ID)
+Hibernate: create index SHP_CART_CODE_IDX on SHOPPING_CART (SHP_CART_CODE)
+Hibernate: create index SHP_CART_CUSTOMER_IDX on SHOPPING_CART (CUSTOMER_ID)
+Hibernate: alter table SHOPPING_CART add constraint UK_8ld8p40fwrjobi7t3n95pna35 unique (SHP_CART_CODE)
+Hibernate: create index SM_GROUP_GROUP_TYPE on SM_GROUP (GROUP_TYPE)
+Hibernate: alter table SM_GROUP add constraint UK_t83rjsoml3o785oj37lpqpyko unique (GROUP_NAME)
+Hibernate: alter table SYSTEM_NOTIFICATION add constraint UKnpdnlc390vgr2mhepib1mtrmr unique (MERCHANT_ID, CONFIG_KEY)
+Hibernate: create index TAX_CLASS_CODE_IDX on TAX_CLASS (TAX_CLASS_CODE)
+Hibernate: alter table TAX_CLASS add constraint UKa4q5q57a8oeh2ojeo8dhr935k unique (MERCHANT_ID, TAX_CLASS_CODE)
+Hibernate: alter table TAX_RATE add constraint UK8gh6l9n0xq03b91sglp62oelu unique (TAX_CODE, MERCHANT_ID)
+Hibernate: alter table TAX_RATE_DESCRIPTION add constraint UKt3xg8pl88yacdxg49nb46effg unique (TAX_RATE_ID, LANGUAGE_ID)
+Hibernate: create index USR_NAME_IDX on USERS (ADMIN_NAME)
+Hibernate: alter table USERS add constraint UK7cwrowcnjlfxpxpdd1op9ymab unique (MERCHANT_ID, ADMIN_NAME)
+Hibernate: alter table ZONE add constraint UK_4tq3p5w8k4h4easyf5t3n1jdr unique (ZONE_CODE)
+Hibernate: alter table ZONE_DESCRIPTION add constraint UKm64laxgrv9fxm6io232ap4su9 unique (ZONE_ID, LANGUAGE_ID)
+Hibernate: alter table CATALOG add constraint FKranq0rweb0r6j31j565ak51g8 foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table CATALOG_ENTRY add constraint FKqp2j48hb3vodovb8gn2o4gox foreign key (CATALOG_ID) references CATALOG (id)
+Hibernate: alter table CATALOG_ENTRY add constraint FK374wks7em54d0oghju0earttl foreign key (CATEGORY_ID) references CATEGORY (CATEGORY_ID)
+Hibernate: alter table CATEGORY add constraint FK8a09asq5fcx0a88i4m8nsixy foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table CATEGORY add constraint FKn3kekntr7pm8g9v8ask698ato foreign key (PARENT_ID) references CATEGORY (CATEGORY_ID)
+Hibernate: alter table CATEGORY_DESCRIPTION add constraint FKl4j5boteutpu1p8f67kydpnmd foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table CATEGORY_DESCRIPTION add constraint FKa58u7d0ydfgref1iaux5efyov foreign key (CATEGORY_ID) references CATEGORY (CATEGORY_ID)
+Hibernate: alter table CONTENT add constraint FKfmoi0fkjbtfty3o8fs94t11r1 foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table CONTENT_DESCRIPTION add constraint FK47yxf681u0rfw2kvarhqb0r3v foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table CONTENT_DESCRIPTION add constraint FKk7fabfxn2flvcofwwpyg5sys foreign key (CONTENT_ID) references CONTENT (CONTENT_ID)
+Hibernate: alter table COUNTRY add constraint FKd2q9e14kh1j6tm1gpbct2xwws foreign key (GEOZONE_ID) references GEOZONE (GEOZONE_ID)
+Hibernate: alter table COUNTRY_DESCRIPTION add constraint FKersrbjot9p9nfukxfd2l27c7t foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table COUNTRY_DESCRIPTION add constraint FKkd2sy7q97wr2ahvyiiqc4txji foreign key (COUNTRY_ID) references COUNTRY (COUNTRY_ID)
+Hibernate: alter table CUSTOMER add constraint FK5pas8t9mknk4kkin55t4v300l foreign key (BILLING_COUNTRY_ID) references COUNTRY (COUNTRY_ID)
+Hibernate: alter table CUSTOMER add constraint FKp0xcpa3i2mgdr0kq43xiibx40 foreign key (BILLING_ZONE_ID) references ZONE (ZONE_ID)
+Hibernate: alter table CUSTOMER add constraint FKdgjqmj04qt89gmfloo4ofojcw foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table CUSTOMER add constraint FKbxyooiceli2ko29bupdye6jgn foreign key (DELIVERY_COUNTRY_ID) references COUNTRY (COUNTRY_ID)
+Hibernate: alter table CUSTOMER add constraint FK3k21jw28bbx043c2mnhevg9w4 foreign key (DELIVERY_ZONE_ID) references ZONE (ZONE_ID)
+Hibernate: alter table CUSTOMER add constraint FK8122nrpakxu3umk1od4v0xxoa foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table CUSTOMER_ATTRIBUTE add constraint FKc3318o13i2bpxkci1bh52we5a foreign key (CUSTOMER_ID) references CUSTOMER (CUSTOMER_ID)
+Hibernate: alter table CUSTOMER_ATTRIBUTE add constraint FK4xugs9yd9w4o3sw11fisb8tj5 foreign key (OPTION_ID) references CUSTOMER_OPTION (CUSTOMER_OPTION_ID)
+Hibernate: alter table CUSTOMER_ATTRIBUTE add constraint FK9fl7iexvdeeeoch9fh35o5vw4 foreign key (OPTION_VALUE_ID) references CUSTOMER_OPTION_VALUE (CUSTOMER_OPTION_VALUE_ID)
+Hibernate: alter table CUSTOMER_GROUP add constraint FKgrr5v89l1m9sl2qol62bbctq4 foreign key (GROUP_ID) references SM_GROUP (GROUP_ID)
+Hibernate: alter table CUSTOMER_GROUP add constraint FK257h3e27f4ujw08doqtq46hho foreign key (CUSTOMER_ID) references CUSTOMER (CUSTOMER_ID)
+Hibernate: alter table CUSTOMER_OPT_VAL_DESCRIPTION add constraint FK6rfssi3qfx4pswicxrfb18c1 foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table CUSTOMER_OPT_VAL_DESCRIPTION add constraint FKhwrs6fyqk6vh11yvcflu42yef foreign key (CUSTOMER_OPT_VAL_ID) references CUSTOMER_OPTION_VALUE (CUSTOMER_OPTION_VALUE_ID)
+Hibernate: alter table CUSTOMER_OPTIN add constraint FKk5v94dvhsgibaw89hv4m8o5yw foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table CUSTOMER_OPTIN add constraint FK7qym878m07cwvs4foe68lvqjt foreign key (OPTIN_ID) references OPTIN (OPTIN_ID)
+Hibernate: alter table CUSTOMER_OPTION add constraint FKcmqnh0rn2hukdfowean5tdy8k foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table CUSTOMER_OPTION_DESC add constraint FKm4iu7v9db17wk2a03xqbqdlfa foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table CUSTOMER_OPTION_DESC add constraint FKc2yiucjbw0wjha8ww7a01qfeo foreign key (CUSTOMER_OPTION_ID) references CUSTOMER_OPTION (CUSTOMER_OPTION_ID)
+Hibernate: alter table CUSTOMER_OPTION_SET add constraint FK1y5qtsuabhpwft3dyhqrgmtb4 foreign key (CUSTOMER_OPTION_ID) references CUSTOMER_OPTION (CUSTOMER_OPTION_ID)
+Hibernate: alter table CUSTOMER_OPTION_SET add constraint FKj9vnvyh6hhhftjbcsymgiodm9 foreign key (CUSTOMER_OPTION_VALUE_ID) references CUSTOMER_OPTION_VALUE (CUSTOMER_OPTION_VALUE_ID)
+Hibernate: alter table CUSTOMER_OPTION_VALUE add constraint FKho87ssg5rnvwauj3y690a96g6 foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table CUSTOMER_REVIEW add constraint FKayt6tbxp7d4g1qyg8crw2n73p foreign key (CUSTOMERS_ID) references CUSTOMER (CUSTOMER_ID)
+Hibernate: alter table CUSTOMER_REVIEW add constraint FK7pmqdk9od2af7cl6alx82fkek foreign key (REVIEWED_CUSTOMER_ID) references CUSTOMER (CUSTOMER_ID)
+Hibernate: alter table CUSTOMER_REVIEW_DESCRIPTION add constraint FK5pkgrlk32uqaxkrbve5mws1hj foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table CUSTOMER_REVIEW_DESCRIPTION add constraint FKhf88oagf6t62k28afn8uaijc7 foreign key (CUSTOMER_REVIEW_ID) references CUSTOMER_REVIEW (CUSTOMER_REVIEW_ID)
+Hibernate: alter table FILE_HISTORY add constraint FK2k8h4penkjlbtc23vamwyek2g foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table GEOZONE_DESCRIPTION add constraint FK1t2hp628edebe5d6co2whbla9 foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table GEOZONE_DESCRIPTION add constraint FKn82te2yb2st4hk2qlhl8ileb9 foreign key (GEOZONE_ID) references GEOZONE (GEOZONE_ID)
+Hibernate: alter table MANUFACTURER add constraint FKhswph4nthrqwffjekccudsrt2 foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table MANUFACTURER_DESCRIPTION add constraint FK20t33wr4tp1kt1uyw7s8a3afl foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table MANUFACTURER_DESCRIPTION add constraint FKre4iys57n5cfbgpg3qqgewtrh foreign key (MANUFACTURER_ID) references MANUFACTURER (MANUFACTURER_ID)
+Hibernate: alter table MERCHANT_CONFIGURATION add constraint FKf9bkgf0ysbp5fo9j69shm0pri foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table MERCHANT_LANGUAGE add constraint FKjwy0pjijh1qmcoivq50o2jgec foreign key (languages_LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table MERCHANT_LANGUAGE add constraint FKiisj0tmoujv6n3iqmytvo39kn foreign key (stores_MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table MERCHANT_LOG add constraint FKto727b9r68qrtn2vvdqdvd4ic foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table MERCHANT_STORE add constraint FK2gn7vpkd9x832urw7c6jlawnn foreign key (COUNTRY_ID) references COUNTRY (COUNTRY_ID)
+Hibernate: alter table MERCHANT_STORE add constraint FK63hlw9wp1k1x3f5tke7t2us7s foreign key (CURRENCY_ID) references CURRENCY (CURRENCY_ID)
+Hibernate: alter table MERCHANT_STORE add constraint FKdnemo9tl8tjhkxko83psvkv19 foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table MERCHANT_STORE add constraint FKgkoele515h76u39b9defibkm9 foreign key (PARENT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table MERCHANT_STORE add constraint FK5o24aky9161jyofyxmg0g53vv foreign key (ZONE_ID) references ZONE (ZONE_ID)
+Hibernate: alter table OPTIN add constraint FK37xvfo4the20avv7f1e1771fh foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table ORDER_ACCOUNT add constraint FKi6l5isodh81m5hy8ua06hx73n foreign key (ORDER_ID) references ORDERS (ORDER_ID)
+Hibernate: alter table ORDER_ACCOUNT_PRODUCT add constraint FK7oxc8ygov7vd2ajt185jhiwts foreign key (ORDER_ACCOUNT_ID) references ORDER_ACCOUNT (ORDER_ACCOUNT_ID)
+Hibernate: alter table ORDER_ACCOUNT_PRODUCT add constraint FK5kiyyb8ekqi9bfowytww8atcx foreign key (ORDER_PRODUCT_ID) references ORDER_PRODUCT (ORDER_PRODUCT_ID)
+Hibernate: alter table ORDER_ATTRIBUTE add constraint FK4nw5yrtgb4in6leve76bmdnua foreign key (ORDER_ID) references ORDERS (ORDER_ID)
+Hibernate: alter table ORDER_PRODUCT add constraint FKf0sghmn59s14cxrjtrvkvi5yk foreign key (ORDER_ID) references ORDERS (ORDER_ID)
+Hibernate: alter table ORDER_PRODUCT_ATTRIBUTE add constraint FK7j86rvwaysbok1nuofrnmhmkx foreign key (ORDER_PRODUCT_ID) references ORDER_PRODUCT (ORDER_PRODUCT_ID)
+Hibernate: alter table ORDER_PRODUCT_DOWNLOAD add constraint FKstrda0eweharld63j8pxa2o2r foreign key (ORDER_PRODUCT_ID) references ORDER_PRODUCT (ORDER_PRODUCT_ID)
+Hibernate: alter table ORDER_PRODUCT_PRICE add constraint FKnkukiqxrieonyulercgnh857s foreign key (ORDER_PRODUCT_ID) references ORDER_PRODUCT (ORDER_PRODUCT_ID)
+Hibernate: alter table ORDER_STATUS_HISTORY add constraint FKmhghgf1xy3o0npsp8xkj6wyvq foreign key (ORDER_ID) references ORDERS (ORDER_ID)
+Hibernate: alter table ORDER_TOTAL add constraint FK1tfvgk5smm80efdcc8uop4he3 foreign key (ORDER_ID) references ORDERS (ORDER_ID)
+Hibernate: alter table ORDERS add constraint FKipesu5tupnriahutgle6xu9ed foreign key (BILLING_COUNTRY_ID) references COUNTRY (COUNTRY_ID)
+Hibernate: alter table ORDERS add constraint FKit6ti99mv5uvuxqskhurv3y59 foreign key (BILLING_ZONE_ID) references ZONE (ZONE_ID)
+Hibernate: alter table ORDERS add constraint FKfusivmw6q3gjxnmp47n9s74qi foreign key (CURRENCY_ID) references CURRENCY (CURRENCY_ID)
+Hibernate: alter table ORDERS add constraint FKnlx97vjyorunxglhy5bird06c foreign key (DELIVERY_COUNTRY_ID) references COUNTRY (COUNTRY_ID)
+Hibernate: alter table ORDERS add constraint FKn9uvjl8105fsly4doo8rqnv5b foreign key (DELIVERY_ZONE_ID) references ZONE (ZONE_ID)
+Hibernate: alter table ORDERS add constraint FKaodv5ffayq8x50q311o2y8m1 foreign key (MERCHANTID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table PERMISSION_GROUP add constraint FK77ly3khyuu40odly02d351s84 foreign key (PERMISSION_ID) references PERMISSION (PERMISSION_ID)
+Hibernate: alter table PERMISSION_GROUP add constraint FKr7ylutdgqp1nrlbhjwit6y17g foreign key (GROUP_ID) references SM_GROUP (GROUP_ID)
+Hibernate: alter table PRODUCT add constraint FKra5mmrdxn3ci86hod7q1u3vu9 foreign key (MANUFACTURER_ID) references MANUFACTURER (MANUFACTURER_ID)
+Hibernate: alter table PRODUCT add constraint FKhhoq1nd9e0i4m7rt8gkh7d67h foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table PRODUCT add constraint FKqtt5f0aht5h7ough5rbkkcb33 foreign key (CUSTOMER_ID) references CUSTOMER (CUSTOMER_ID)
+Hibernate: alter table PRODUCT add constraint FKb8oqtc3j8sqo0t8xdrne7pg69 foreign key (TAX_CLASS_ID) references TAX_CLASS (TAX_CLASS_ID)
+Hibernate: alter table PRODUCT add constraint FKeiirvj8eu40h103fth8es1mt0 foreign key (PRODUCT_TYPE_ID) references PRODUCT_TYPE (PRODUCT_TYPE_ID)
+Hibernate: alter table PRODUCT_ATTRIBUTE add constraint FKml3nvemdjya159a7669qt1gjd foreign key (PRODUCT_ID) references PRODUCT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_ATTRIBUTE add constraint FK2st60u9twmvvaowwn88mt3lrx foreign key (OPTION_ID) references PRODUCT_OPTION (PRODUCT_OPTION_ID)
+Hibernate: alter table PRODUCT_ATTRIBUTE add constraint FK3rleultg9fn2dxruefbb18d5t foreign key (OPTION_VALUE_ID) references PRODUCT_OPTION_VALUE (PRODUCT_OPTION_VALUE_ID)
+Hibernate: alter table PRODUCT_AVAILABILITY add constraint FKmjs1xqdsgji88j5uduj83bntl foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table PRODUCT_AVAILABILITY add constraint FK5sbh4dx25pmjcqx958hr9ys8h foreign key (PRODUCT_ID) references PRODUCT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_AVAILABILITY add constraint FKm9cb3uvgql005wcsqi906pjhg foreign key (PRODUCT_VARIANT) references PRODUCT_VARIANT (PRODUCT_VARIANT_ID)
+Hibernate: alter table PRODUCT_CATEGORY add constraint FK3xw1sbaa29r534jvedimdd7md foreign key (CATEGORY_ID) references CATEGORY (CATEGORY_ID)
+Hibernate: alter table PRODUCT_CATEGORY add constraint FKa7245ly271mb0crlhxwhhppsq foreign key (PRODUCT_ID) references PRODUCT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_DESCRIPTION add constraint FK6esjdaa6vu2t5vjin788a8og6 foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table PRODUCT_DESCRIPTION add constraint FKm46yjcu59q79qrokgglwq2ove foreign key (PRODUCT_ID) references PRODUCT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_DIGITAL add constraint FK47fmb5cg68pws7k26txyl1il6 foreign key (PRODUCT_ID) references PRODUCT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_IMAGE add constraint FKgab836d8rxqg8vv55nm02r65i foreign key (PRODUCT_ID) references PRODUCT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_IMAGE_DESCRIPTION add constraint FKlhdnpki4sf98wev0pcj2bvnih foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table PRODUCT_IMAGE_DESCRIPTION add constraint FK1dhldo18nj9l2y6qympgucynq foreign key (PRODUCT_IMAGE_ID) references PRODUCT_IMAGE (PRODUCT_IMAGE_ID)
+Hibernate: alter table PRODUCT_OPT_SET_OPT_VALUE add constraint FK9dwatblxwc64a5la3bb7qnwd8 foreign key (values_PRODUCT_OPTION_VALUE_ID) references PRODUCT_OPTION_VALUE (PRODUCT_OPTION_VALUE_ID)
+Hibernate: alter table PRODUCT_OPT_SET_OPT_VALUE add constraint FK3u6iyag8x8w9tkt7sqcoibjq6 foreign key (ProductOptionSet_PRODUCT_OPTION_SET_ID) references PRODUCT_OPTION_SET (PRODUCT_OPTION_SET_ID)
+Hibernate: alter table PRODUCT_OPT_SET_PRD_TYPE add constraint FKiem30u1enm0p25i7t53jganf4 foreign key (productTypes_PRODUCT_TYPE_ID) references PRODUCT_TYPE (PRODUCT_TYPE_ID)
+Hibernate: alter table PRODUCT_OPT_SET_PRD_TYPE add constraint FK4655h91s0eiinonako9n4h9ha foreign key (ProductOptionSet_PRODUCT_OPTION_SET_ID) references PRODUCT_OPTION_SET (PRODUCT_OPTION_SET_ID)
+Hibernate: alter table PRODUCT_OPTION add constraint FKp8cski5t5f5m4et4fw0uilcgu foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table PRODUCT_OPTION_DESC add constraint FK8fiwk5o1gbn2r2u8529yaf9xt foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table PRODUCT_OPTION_DESC add constraint FKgjqmfofile4hwv867irsnvuc0 foreign key (PRODUCT_OPTION_ID) references PRODUCT_OPTION (PRODUCT_OPTION_ID)
+Hibernate: alter table PRODUCT_OPTION_SET add constraint FK4njy17416fn86muojmtbav1d0 foreign key (PRODUCT_OPTION_ID) references PRODUCT_OPTION (PRODUCT_OPTION_ID)
+Hibernate: alter table PRODUCT_OPTION_SET add constraint FK8d5vylmhvmckmframdehgwqau foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table PRODUCT_OPTION_VALUE add constraint FKnd3nw0mamlk8bkxo8ad5m85pq foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table PRODUCT_OPTION_VALUE_DESCRIPTION add constraint FK19mnby7atlt85exlypxdxhacx foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table PRODUCT_OPTION_VALUE_DESCRIPTION add constraint FKqttc6b79yp2s1hyrhg4thag6s foreign key (PRODUCT_OPTION_VALUE_ID) references PRODUCT_OPTION_VALUE (PRODUCT_OPTION_VALUE_ID)
+Hibernate: alter table PRODUCT_PRICE add constraint FK1dic7jnnk1qikgvwcrf4dw12r foreign key (PRODUCT_AVAIL_ID) references PRODUCT_AVAILABILITY (PRODUCT_AVAIL_ID)
+Hibernate: alter table PRODUCT_PRICE_DESCRIPTION add constraint FK7bmbrjr8ar5icwdpt8myj6gei foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table PRODUCT_PRICE_DESCRIPTION add constraint FKbwxw861ipjsct606j3dagdjsf foreign key (PRODUCT_PRICE_ID) references PRODUCT_PRICE (PRODUCT_PRICE_ID)
+Hibernate: alter table PRODUCT_RELATIONSHIP add constraint FKso3cvinykac5wdwu1tjgfotor foreign key (PRODUCT_ID) references PRODUCT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_RELATIONSHIP add constraint FKfskwtawyt85g9h6761fa69ya5 foreign key (RELATED_PRODUCT_ID) references PRODUCT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_RELATIONSHIP add constraint FKnprvswtbgrm6bjfq3cbdl3qsm foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table PRODUCT_REVIEW add constraint FK7tm0jrt0hiugo3ep49t3subou foreign key (CUSTOMERS_ID) references CUSTOMER (CUSTOMER_ID)
+Hibernate: alter table PRODUCT_REVIEW add constraint FKbfi8de7kxultg1vevq6jc1hn7 foreign key (PRODUCT_ID) references PRODUCT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_REVIEW_DESCRIPTION add constraint FK7byc5jsf5bm4lk674ac44e50m foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table PRODUCT_REVIEW_DESCRIPTION add constraint FKmjivhigdcxmytndlpjuhf4o25 foreign key (PRODUCT_REVIEW_ID) references PRODUCT_REVIEW (PRODUCT_REVIEW_ID)
+Hibernate: alter table PRODUCT_TYPE add constraint FKswkvtaq4om2di6x8cd4m22ofn foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table PRODUCT_TYPE_DESCRIPTION add constraint FK81q74whco5y9fd51aa330hlc0 foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table PRODUCT_TYPE_DESCRIPTION add constraint FKpwc89ulk7c9asbp2nfy2t4x2j foreign key (PRODUCT_TYPE_ID) references PRODUCT_TYPE (PRODUCT_TYPE_ID)
+Hibernate: alter table PRODUCT_VAR_IMAGE add constraint FKa691h70ypyp8liquow7qrg81h foreign key (PRODUCT_VARIANT_GROUP_ID) references PRODUCT_VARIANT_GROUP (PRODUCT_VARIANT_GROUP_ID)
+Hibernate: alter table PRODUCT_VAR_IMAGE_DESCRIPTION add constraint FKinpkcxbxyg8yni5ftcvjlt1sp foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table PRODUCT_VAR_IMAGE_DESCRIPTION add constraint FKibpkivbdn6wqe92gb40l5hffl foreign key (PRODUCT_ID) references PRODUCT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_VAR_IMAGE_DESCRIPTION add constraint FKo6dx44u06sx0mlvq15oy2wlnj foreign key (PRODUCT_VAR_IMAGE_ID) references PRODUCT_VAR_IMAGE (PRODUCT_VAR_IMAGE_ID)
+Hibernate: alter table PRODUCT_VARIANT add constraint FK88qb5xufd31481gt7epc8scau foreign key (PRODUCT_ID) references PRODUCT (PRODUCT_ID)
+Hibernate: alter table PRODUCT_VARIANT add constraint FKs1gvb7qb19cuowmhrhuwo7lcv foreign key (PRODUCT_VARIANT_GROUP_ID) references PRODUCT_VARIANT_GROUP (PRODUCT_VARIANT_GROUP_ID)
+Hibernate: alter table PRODUCT_VARIANT add constraint FK8nqskhly5tfk07g0padic9am9 foreign key (PRODUCT_VARIATION_ID) references PRODUCT_VARIATION (PRODUCT_VARIATION_ID)
+Hibernate: alter table PRODUCT_VARIANT add constraint FKsa5ijtdrt6dge0op121ox56a0 foreign key (PRODUCT_VARIATION_VALUE_ID) references PRODUCT_VARIATION (PRODUCT_VARIATION_ID)
+Hibernate: alter table PRODUCT_VARIANT_GROUP add constraint FKqkn1or09hw4s03b8n1kdwhcsr foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table PRODUCT_VARIATION add constraint FKqlm3c2178neue84l5kx51ovoq foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table PRODUCT_VARIATION add constraint FK5jr2rc6t2p27nwdo5eqwa7658 foreign key (PRODUCT_OPTION_ID) references PRODUCT_OPTION (PRODUCT_OPTION_ID)
+Hibernate: alter table PRODUCT_VARIATION add constraint FKy6gamyvrpds502pdcqq4voyg foreign key (OPTION_VALUE_ID) references PRODUCT_OPTION_VALUE (PRODUCT_OPTION_VALUE_ID)
+Hibernate: alter table SHIPING_ORIGIN add constraint FKpqig59usqvs9h0dw4lm8rv7yy foreign key (COUNTRY_ID) references COUNTRY (COUNTRY_ID)
+Hibernate: alter table SHIPING_ORIGIN add constraint FKp0dbwsv3sdsp57ex7j5k9b0oq foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table SHIPING_ORIGIN add constraint FK6k73f1n18kr7mqp708aiwq047 foreign key (ZONE_ID) references ZONE (ZONE_ID)
+Hibernate: alter table SHIPPING_QUOTE add constraint FK9vb7tbjl8ivygdiqw883fewx7 foreign key (DELIVERY_COUNTRY_ID) references COUNTRY (COUNTRY_ID)
+Hibernate: alter table SHIPPING_QUOTE add constraint FKiioesp0vl6x4om1jeajj4uy1t foreign key (DELIVERY_ZONE_ID) references ZONE (ZONE_ID)
+Hibernate: alter table SHOPPING_CART add constraint FKqvghr5rmjefe3lw9mcolk30a0 foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table SHOPPING_CART_ATTR_ITEM add constraint FKp42tpa623hyo9ww69v0ohb3er foreign key (SHP_CART_ITEM_ID) references SHOPPING_CART_ITEM (SHP_CART_ITEM_ID)
+Hibernate: alter table SHOPPING_CART_ITEM add constraint FK2gbimdwe9uysd5xadnfl0xq83 foreign key (SHP_CART_ID) references SHOPPING_CART (SHP_CART_ID)
+Hibernate: alter table SM_TRANSACTION add constraint FK7j0s1gqh2tue1fyh5nyj5kwkp foreign key (ORDER_ID) references ORDERS (ORDER_ID)
+Hibernate: alter table SYSTEM_NOTIFICATION add constraint FKs6qk7l06e0s6m9n04momedgt7 foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table SYSTEM_NOTIFICATION add constraint FK3dykr9pm9ln1uektuw18blb6m foreign key (USER_ID) references USERS (USER_ID)
+Hibernate: alter table TAX_CLASS add constraint FK82i8puujghcv7fc82qwsgjg8w foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table TAX_RATE add constraint FK6wm34jcwoembe1qsmle2wtwnv foreign key (COUNTRY_ID) references COUNTRY (COUNTRY_ID)
+Hibernate: alter table TAX_RATE add constraint FKfwp6yka2qps9jna473e6c6yc1 foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table TAX_RATE add constraint FKt8isen27i3ioa0tw3bl8qlvdh foreign key (PARENT_ID) references TAX_RATE (TAX_RATE_ID)
+Hibernate: alter table TAX_RATE add constraint FK7bpa9pbl1gnj5y3xbgs3wc0eg foreign key (TAX_CLASS_ID) references TAX_CLASS (TAX_CLASS_ID)
+Hibernate: alter table TAX_RATE add constraint FKm9snpf6o1nb4j1t80nas8d1ix foreign key (ZONE_ID) references ZONE (ZONE_ID)
+Hibernate: alter table TAX_RATE_DESCRIPTION add constraint FKsicb2ydx42o04pvlnxw2mlx0w foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table TAX_RATE_DESCRIPTION add constraint FK65c2lqslk5kx25dpkem2r0vxq foreign key (TAX_RATE_ID) references TAX_RATE (TAX_RATE_ID)
+Hibernate: alter table USER_GROUP add constraint FK75kainrhn4kh8j3sw2xbe7v61 foreign key (GROUP_ID) references SM_GROUP (GROUP_ID)
+Hibernate: alter table USER_GROUP add constraint FK9op4wv63nonsby8y9myjhtho foreign key (USER_ID) references USERS (USER_ID)
+Hibernate: alter table USERS add constraint FK4yb3ho4yxvcjniqg09opbm7ja foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table USERS add constraint FKtpio656e5t0cja7kx7p79rkh6 foreign key (MERCHANT_ID) references MERCHANT_STORE (MERCHANT_ID)
+Hibernate: alter table ZONE add constraint FKhn2c1w3e1twhjg7tiwv7vuk67 foreign key (COUNTRY_ID) references COUNTRY (COUNTRY_ID)
+Hibernate: alter table ZONE_DESCRIPTION add constraint FK69ybu7r3bgpcq65c77ji1udh3 foreign key (LANGUAGE_ID) references LANGUAGE (LANGUAGE_ID)
+Hibernate: alter table ZONE_DESCRIPTION add constraint FKpv4elin6w3b03756obqvk447f foreign key (ZONE_ID) references ZONE (ZONE_ID)
+2024-09-30 01:10:03.734  INFO 20156 --- [           main] c.s.s.a.c.ShopServletContextListener     : ===context init===
+2024-09-30 01:10:05.933  INFO 20156 --- [           main] o.i.factories.GlobalComponentRegistry    : ISPN000128: Infinispan version: Infinispan 'Infinity Minus ONE +2' 9.4.18.Final
+2024-09-30 01:10:07.660  WARN 20156 --- [           main] o.i.t.l.GenericTransactionManagerLookup  : ISPN000104: Falling back to EmbeddedTransactionManager from Infinispan
+2024-09-30 01:10:07.919  INFO 20156 --- [           main] .m.c.c.i.CmsStaticContentFileManagerImpl : init com.salesmanager.core.business.modules.cms.content.infinispan.CmsStaticContentFileManagerImpl setting rootstore-merchant
+2024-09-30 01:10:12.616  INFO 20156 --- [           main] c.s.c.b.m.c.p.i.CmsImageFileManagerImpl  : init com.salesmanager.core.business.modules.cms.product.infinispan.CmsImageFileManagerImpl setting rootproduct-merchant
+2024-09-30 01:10:12.845 ERROR 20156 --- [           main] c.s.shop.controller.ImagesController     : Can't load temporary default image
+
+java.io.FileNotFoundException: class path resource [static/not-found.png] cannot be resolved to absolute file path because it does not reside in the file system: jar:file:/C:/Users/himag/Documents/GitHub/shopizer/sm-shop/target/shopizer.jar!/BOOT-INF/classes!/static/not-found.png
+	at org.springframework.util.ResourceUtils.getFile(ResourceUtils.java:217) ~[spring-core-5.3.18.jar!/:5.3.18]
+	at org.springframework.util.ResourceUtils.getFile(ResourceUtils.java:180) ~[spring-core-5.3.18.jar!/:5.3.18]
+	at com.salesmanager.shop.controller.ImagesController.init(ImagesController.java:50) ~[classes!/:3.2.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at com.salesmanager.shop.application.ShopApplication.main(ShopApplication.java:12) ~[classes!/:3.2.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[shopizer.jar:3.2.5]
+
+Hibernate: select count(*) as col_0_0_ from LANGUAGE language0_
+2024-09-30 01:10:13.808 ERROR 20156 --- [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Table 'salesmanager.language' doesn't exist
+2024-09-30 01:10:13.839 ERROR 20156 --- [           main] c.s.shop.init.data.InitializationLoader  : Error in the init method
+
+org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:259) ~[spring-orm-5.3.18.jar!/:5.3.18]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233) ~[spring-orm-5.3.18.jar!/:5.3.18]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551) ~[spring-orm-5.3.18.jar!/:5.3.18]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.5.10.jar!/:2.5.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at jdk.proxy2/jdk.proxy2.$Proxy200.count(Unknown Source) ~[na:na]
+	at com.salesmanager.core.business.services.common.generic.SalesManagerEntityServiceImpl.count(SalesManagerEntityServiceImpl.java:80) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at com.salesmanager.core.business.services.common.generic.SalesManagerEntityServiceImpl$$FastClassBySpringCGLIB$$281f4668.invoke(<generated>) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at com.salesmanager.core.business.services.reference.language.LanguageServiceImpl$$EnhancerBySpringCGLIB$$d172e10a.count(<generated>) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at com.salesmanager.core.business.services.reference.init.InitializationDatabaseImpl.isEmpty(InitializationDatabaseImpl.java:100) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at com.salesmanager.core.business.services.reference.init.InitializationDatabaseImpl$$FastClassBySpringCGLIB$$217b8725.invoke(<generated>) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at com.salesmanager.core.business.services.reference.init.InitializationDatabaseImpl$$EnhancerBySpringCGLIB$$eda30429.isEmpty(<generated>) ~[sm-core-3.2.5.jar!/:3.2.5]
+	at com.salesmanager.shop.init.data.InitializationLoader.init(InitializationLoader.java:75) ~[classes!/:3.2.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-2.5.12.jar!/:2.5.12]
+	at com.salesmanager.shop.application.ShopApplication.main(ShopApplication.java:12) ~[classes!/:3.2.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[shopizer.jar:3.2.5]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[shopizer.jar:3.2.5]
+Caused by: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:63) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:67) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2297) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2050) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2012) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:948) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:349) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.doList(Loader.java:2843) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.doList(Loader.java:2825) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2657) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.Loader.list(Loader.java:2652) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:506) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:219) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1414) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1636) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1604) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1652) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.count(SimpleJpaRepository.java:585) ~[spring-data-jpa-2.5.10.jar!/:2.5.10]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:529) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:600) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:163) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.5.10.jar!/:2.5.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar!/:5.3.18]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.18.jar!/:5.3.18]
+	... 68 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Table 'salesmanager.language' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.21.jar!/:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar!/:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar!/:8.0.21]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.21.jar!/:8.0.21]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003) ~[mysql-connector-java-8.0.21.jar!/:8.0.21]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-4.0.3.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar!/:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:57) ~[hibernate-core-5.4.33.jar!/:5.4.33]
+	... 106 common frames omitted
+
+2024-09-30 01:10:16.228  INFO 20156 --- [           main] c.s.m.s.c.a.CanadaPostAutoConfiguration  : instantiate [CanadaPostQuoteModule]
+2024-09-30 01:10:16.236  INFO 20156 --- [           main] c.s.m.s.c.a.CanadaPostAutoConfiguration  : autoconfigure [com.shopizer.modules.shipping.canadapost.autoconfigure.CanadaPostAutoConfiguration$$EnhancerBySpringCGLIB$$38399c6b]
+2024-09-30 01:10:18.993  INFO 20156 --- [           main] .m.c.c.i.CmsStaticContentFileManagerImpl : init com.salesmanager.core.business.modules.cms.content.infinispan.CmsStaticContentFileManagerImpl setting rootproduct-file
+2024-09-30 01:10:19.698  INFO 20156 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-09-30 01:10:20.488  INFO 20156 --- [           main] c.s.c.b.m.c.p.l.CmsImageFileManagerImpl  : init com.salesmanager.core.business.modules.cms.product.local.CmsImageFileManagerImpl setting root
+2024-09-30 01:10:20.519  INFO 20156 --- [           main] .m.c.c.l.CmsStaticContentFileManagerImpl : init com.salesmanager.core.business.modules.cms.content.local.CmsStaticContentFileManagerImpl setting root
+2024-09-30 01:10:20.522  INFO 20156 --- [           main] .m.c.c.l.CmsStaticContentFileManagerImpl : init com.salesmanager.core.business.modules.cms.content.local.CmsStaticContentFileManagerImpl setting root
+2024-09-30 01:10:22.735  INFO 20156 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2024-09-30 01:10:22.811  INFO 20156 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2024-09-30 01:10:23.228  INFO 20156 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2024-09-30 01:10:23.883  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: authenticateUsingPOST_1
+2024-09-30 01:10:24.117  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_1
+2024-09-30 01:10:24.152  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
+2024-09-30 01:10:24.172  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_1
+2024-09-30 01:10:24.225  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
+2024-09-30 01:10:24.276  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: boxesUsingGET_1
+2024-09-30 01:10:24.396  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pagesUsingGET_1
+2024-09-30 01:10:24.422  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updatePageUsingPUT_1
+2024-09-30 01:10:24.428  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: uploadUsingPOST_1
+2024-09-30 01:10:24.489  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_2
+2024-09-30 01:10:24.492  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
+2024-09-30 01:10:24.495  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
+2024-09-30 01:10:24.501  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_1
+2024-09-30 01:10:24.506  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAuthUserUsingGET_1
+2024-09-30 01:10:24.521  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_3
+2024-09-30 01:10:24.554  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
+2024-09-30 01:10:24.575  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_3
+2024-09-30 01:10:24.579  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_3
+2024-09-30 01:10:24.586  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
+2024-09-30 01:10:24.610  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_4
+2024-09-30 01:10:24.616  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_4
+2024-09-30 01:10:24.633  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
+2024-09-30 01:10:24.686  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_5
+2024-09-30 01:10:24.693  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_5
+2024-09-30 01:10:24.698  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_2
+2024-09-30 01:10:24.700  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_3
+2024-09-30 01:10:24.706  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_2
+2024-09-30 01:10:24.719  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_4
+2024-09-30 01:10:24.725  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_5
+2024-09-30 01:10:24.764  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_4
+2024-09-30 01:10:24.774  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_6
+2024-09-30 01:10:24.953  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: checkoutUsingPOST_1
+2024-09-30 01:10:25.003  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_3
+2024-09-30 01:10:25.097  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_6
+2024-09-30 01:10:25.133  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_7
+2024-09-30 01:10:25.159  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_8
+2024-09-30 01:10:25.202  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: initUsingPOST_1
+2024-09-30 01:10:25.259  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_7
+2024-09-30 01:10:25.266  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_9
+2024-09-30 01:10:25.304  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: changeProductOrderUsingPOST_1
+2024-09-30 01:10:25.398  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_8
+2024-09-30 01:10:25.409  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_9
+2024-09-30 01:10:25.415  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_6
+2024-09-30 01:10:25.420  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_7
+2024-09-30 01:10:25.423  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_4
+2024-09-30 01:10:25.443  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByfriendlyUrlUsingGET_1
+2024-09-30 01:10:25.446  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByfriendlyUrlUsingGET_2
+2024-09-30 01:10:25.488  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_10
+2024-09-30 01:10:25.564  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_5
+2024-09-30 01:10:25.567  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_6
+2024-09-30 01:10:25.580  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPATCH_1
+2024-09-30 01:10:25.589  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_10
+2024-09-30 01:10:25.620  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_4
+2024-09-30 01:10:25.629  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByfriendlyUrlUsingGET_3
+2024-09-30 01:10:25.631  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByfriendlyUrlUsingGET_4
+2024-09-30 01:10:25.657  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_11
+2024-09-30 01:10:25.748  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_12
+2024-09-30 01:10:25.751  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPATCH_2
+2024-09-30 01:10:25.906  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_13
+2024-09-30 01:10:25.929  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteImageUsingDELETE_1
+2024-09-30 01:10:25.950  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteImageUsingDELETE_2
+2024-09-30 01:10:25.953  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: imageDetailsUsingPATCH_1
+2024-09-30 01:10:25.957  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: imagesUsingGET_1
+2024-09-30 01:10:25.967  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: uploadImageUsingPOST_1
+2024-09-30 01:10:25.974  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_11
+2024-09-30 01:10:25.976  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_8
+2024-09-30 01:10:25.990  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_7
+2024-09-30 01:10:25.999  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_12
+2024-09-30 01:10:26.000  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_9
+2024-09-30 01:10:26.002  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_5
+2024-09-30 01:10:26.005  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_5
+2024-09-30 01:10:26.012  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_14
+2024-09-30 01:10:26.023  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_15
+2024-09-30 01:10:26.030  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_8
+2024-09-30 01:10:26.036  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_10
+2024-09-30 01:10:26.058  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_6
+2024-09-30 01:10:26.062  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_16
+2024-09-30 01:10:26.074  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_17
+2024-09-30 01:10:26.083  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUsingPOST_1
+2024-09-30 01:10:26.088  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_13
+2024-09-30 01:10:26.091  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_11
+2024-09-30 01:10:26.095  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_6
+2024-09-30 01:10:26.101  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_7
+2024-09-30 01:10:26.254  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_18
+2024-09-30 01:10:26.258  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_9
+2024-09-30 01:10:26.285  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsingGET_1
+2024-09-30 01:10:26.293  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_14
+2024-09-30 01:10:26.294  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_15
+2024-09-30 01:10:26.298  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_12
+2024-09-30 01:10:26.299  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_13
+2024-09-30 01:10:26.308  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllUsingGET_2
+2024-09-30 01:10:26.311  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_10
+2024-09-30 01:10:26.316  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_11
+2024-09-30 01:10:26.335  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_16
+2024-09-30 01:10:26.342  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_14
+2024-09-30 01:10:26.346  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_7
+2024-09-30 01:10:26.352  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_8
+2024-09-30 01:10:26.372  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_19
+2024-09-30 01:10:26.382  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_12
+2024-09-30 01:10:26.396  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_17
+2024-09-30 01:10:26.400  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_15
+2024-09-30 01:10:26.406  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_8
+2024-09-30 01:10:26.421  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_9
+2024-09-30 01:10:26.433  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_20
+2024-09-30 01:10:26.439  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_13
+2024-09-30 01:10:26.448  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_18
+2024-09-30 01:10:26.450  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_16
+2024-09-30 01:10:26.457  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_10
+2024-09-30 01:10:26.464  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_21
+2024-09-30 01:10:26.476  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_14
+2024-09-30 01:10:26.506  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_19
+2024-09-30 01:10:26.509  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_17
+2024-09-30 01:10:26.513  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_9
+2024-09-30 01:10:26.518  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_11
+2024-09-30 01:10:26.527  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_22
+2024-09-30 01:10:26.534  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_15
+2024-09-30 01:10:26.589  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: changePasswordUsingPOST_1
+2024-09-30 01:10:26.602  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: changePasswordUsingPOST_2
+2024-09-30 01:10:26.612  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: passwordResetRequestUsingPOST_1
+2024-09-30 01:10:26.616  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: passwordResetVerifyUsingGET_1
+2024-09-30 01:10:26.642  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: contactUsingPOST_1
+2024-09-30 01:10:26.678  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: configureUsingPOST_1
+2024-09-30 01:10:26.712  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getCountryUsingGET_1
+2024-09-30 01:10:26.771  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addToCartUsingPOST_1
+2024-09-30 01:10:26.808  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByCustomerUsingGET_1
+2024-09-30 01:10:26.822  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: modifyCartUsingPOST_1
+2024-09-30 01:10:26.847  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_20
+2024-09-30 01:10:26.849  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_18
+2024-09-30 01:10:26.851  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_10
+2024-09-30 01:10:26.855  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_12
+2024-09-30 01:10:26.859  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_23
+2024-09-30 01:10:26.861  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_16
+2024-09-30 01:10:26.871  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_21
+2024-09-30 01:10:26.874  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_19
+2024-09-30 01:10:26.879  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: existsUsingGET_11
+2024-09-30 01:10:26.884  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_13
+2024-09-30 01:10:26.891  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_24
+2024-09-30 01:10:26.893  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_17
+2024-09-30 01:10:26.903  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_22
+2024-09-30 01:10:26.907  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_20
+2024-09-30 01:10:26.919  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsingGET_14
+2024-09-30 01:10:26.922  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAuthUserUsingGET_2
+2024-09-30 01:10:26.927  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_25
+2024-09-30 01:10:26.933  INFO 20156 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_18
+2024-09-30 01:10:27.026  INFO 20156 --- [           main] c.s.shop.application.ShopApplication     : Started ShopApplication in 64.028 seconds (JVM running for 65.399)
+2024-09-30 01:10:27.140  INFO 20156 --- [TaskExecutor-51] uration$$EnhancerBySpringCGLIB$$a741bccf : Current working directory : C:\Users\himag\Documents\GitHub\shopizer
+2024-09-30 01:14:17.989  INFO 20156 --- [ionShutdownHook] c.s.s.a.c.ShopServletContextListener     : ===context destroy===
+2024-09-30 01:14:18.097  INFO 20156 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-09-30 01:14:18.118  INFO 20156 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
