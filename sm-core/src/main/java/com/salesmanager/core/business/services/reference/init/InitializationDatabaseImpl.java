@@ -380,28 +380,28 @@ public class InitializationDatabaseImpl implements InitializationDatabase {
 		Date date = new Date(System.currentTimeMillis());
 		
 		Language en = languageService.getByCode("en");
-		Country ca = countryService.getByCode("CA");
-		Currency currency = currencyService.getByCode("CAD");
-		Zone qc = zoneService.getByCode("QC");
+		Country in = countryService.getByCode("IN");
+		Currency inr = currencyService.getByCode("INR");
+		Zone wb = zoneService.getByCode("WestBengal");
 		
 		List<Language> supportedLanguages = new ArrayList<Language>();
 		supportedLanguages.add(en);
 		
 		//create a merchant
 		MerchantStore store = new MerchantStore();
-		store.setCountry(ca);
-		store.setCurrency(currency);
+		store.setCountry(in);
+		store.setCurrency(inr);
 		store.setDefaultLanguage(en);
 		store.setInBusinessSince(date);
-		store.setZone(qc);
-		store.setStorename("Shopizer");
-		store.setStorephone("888-888-8888");
+		store.setZone(wb);
+		store.setStorename("HaterSristi");
+		store.setStorephone("1800 120 1818");
 		store.setCode(MerchantStore.DEFAULT_STORE);
-		store.setStorecity("My city");
-		store.setStoreaddress("1234 Street address");
-		store.setStorepostalcode("H2H-2H2");
+		store.setStorecity("Kolkata");
+		store.setStoreaddress("16D, New Garia Housing Society");
+		store.setStorepostalcode("700094");
 		store.setStoreEmailAddress("contact@shopizer.com");
-		store.setDomainName("localhost:8080");
+		store.setDomainName("localhost:8089");
 		store.setStoreTemplate("december");
 		store.setRetailer(true);
 		store.setLanguages(supportedLanguages);
